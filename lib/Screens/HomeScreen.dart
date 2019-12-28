@@ -1,5 +1,9 @@
-import 'package:booklit/Auth/sign_in.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:booklit/BookDetailScreen/Calculus/CalculusDetailScreen.dart';
+import 'package:booklit/BookDetailScreen/Database/DatabaseDetailScreen.dart';
+import 'package:booklit/BookDetailScreen/Java/JavaDetailScreen.dart';
+import 'package:booklit/BookDetailScreen/LinearAlgebra/LinearAlgebraDetailScreen.dart';
+import 'package:booklit/BookDetailScreen/Physics/PhysicsDetailScreen.dart';
+import 'package:booklit/BookDetailScreen/Statics/SaticsDetailScreen.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -51,26 +55,61 @@ class _HomeState extends State<Home> {
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => JavaDetailScreen()),
+                    );
+                  },
                   child: Card(
-                    child: Image.asset('assets/images/java.jpg'),
+                    child: Image.asset('assets/images/java_10.png'),
                   ),
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DatabaseDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/database.png'),
                   ),
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CalculusDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/calculus.jpg'),
                   ),
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LinearAlgebraDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/linear_algebra.jpg'),
                   ),
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PhysicsDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/physics.png'),
                   ),
@@ -82,7 +121,7 @@ class _HomeState extends State<Home> {
             color: Colors.black,
             thickness: .5,
           ),
-          //Mechanical Engineering
+          //Engineering
           Padding(
             padding: EdgeInsets.only(top: 20),
             child: Align(
@@ -103,21 +142,49 @@ class _HomeState extends State<Home> {
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StaticsDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/statics.png'),
                   ),
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CalculusDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/calculus.jpg'),
                   ),
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LinearAlgebraDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/linear_algebra.jpg'),
                   ),
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PhysicsDetailScreen()),
+                    );
+                  },
                   child: Card(
                     child: Image.asset('assets/images/physics.png'),
                   ),

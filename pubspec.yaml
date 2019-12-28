@@ -24,6 +24,12 @@ dependencies:
   firebase_database: any
   google_sign_in: any
   fluttertoast: any
+  flutter_signin_button: any
+  url_launcher: "^3.0.1"
+  firebase_analytics: ^5.0.9
+  intl: ^0.16.0
+  sqflite: ^1.2.0
+  path_provider: any
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,11 +57,12 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - assets/images/calculus.jpg
-    - assets/images/java.jpg
+    - assets/images/java_10.png
     - assets/images/linear_algebra.jpg
     - assets/images/physics.png
     - assets/images/database.png
     - assets/images/statics.png
+    - assets/images/loginbackground.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

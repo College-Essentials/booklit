@@ -1,4 +1,4 @@
-import 'package:booklit/Auth/sign_in.dart';
+import 'package:booklit/Screens/Account.dart';
 import 'package:booklit/Screens/HomeScreen.dart';
 import 'package:booklit/Screens/Request.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ class _NavigationState extends State<Navigation> {
   final _pageOption = [
     Home(),
     Request(),
-    Text('Account'),
+    Account(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,13 +53,14 @@ class _NavigationState extends State<Navigation> {
                   style: TextStyle(color: Colors.black),
                 )),
             BottomNavigationBarItem(
-                icon: CircleAvatar(
-                  backgroundImage: NetworkImage(imageUrl),
+                icon: Icon(
+                  Icons.account_circle,
+                  color: Colors.black,
                 ),
                 title: Text(
                   'Account',
                   style: TextStyle(color: Colors.black),
-                ))
+                )),
           ],
         ),
       ),
