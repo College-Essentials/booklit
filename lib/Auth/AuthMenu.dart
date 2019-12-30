@@ -1,12 +1,12 @@
 /*
 Not required for version 1.0
  */
-import 'package:booklit/Auth/login.dart';
+import 'package:booklit/Auth/Login.dart';
 import 'package:booklit/Auth/sign_in.dart';
 import 'package:booklit/Navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'signUp.dart';
+import 'SignUp.dart';
 
 class AuthMenu extends StatefulWidget {
   @override

@@ -1,3 +1,4 @@
+import 'package:booklit/Auth/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:booklit/Navigation.dart';
@@ -31,7 +32,7 @@ class _SignUpState extends State<SignUp> {
           body: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/loginbackground.jpg"),
+                  image: AssetImage("assets/images/loginbackdrop.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -100,8 +101,36 @@ class _SignUpState extends State<SignUp> {
                               style: TextStyle(color: Colors.black),
                             ),
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Have an account?",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              Login()));
+                                },
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromRGBO(255, 204, 0, 1),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ],
-                      ),
+                      ), //column for form
                     ),
                   ],
                 ),
