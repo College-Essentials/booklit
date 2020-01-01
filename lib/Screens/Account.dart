@@ -1,5 +1,7 @@
 import 'package:booklit/Auth/sign_in.dart';
+import 'package:booklit/Screens/AccountRelated/UserProfile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatefulWidget {
@@ -53,12 +55,12 @@ class _AccountState extends State<Account> {
                                   AsyncSnapshot<FirebaseUser> snapshot) {
                                 if (snapshot.hasData) {
                                   String email = snapshot.data.email;
-                                  String name =
-                                      email.substring(0, email.indexOf("@"));
+                                  String userName = email.substring(
+                                      0, email.indexOf("@calstatela.edu"));
                                   return Text(
-                                    'User Name: ' + name,
+                                    'User Name: ' + userName,
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 20),
+                                        color: Colors.black, fontSize: 15),
                                   );
                                 } else {
                                   return Text('Loading...');
@@ -80,6 +82,16 @@ class _AccountState extends State<Account> {
                                   return Text('Loading...');
                                 }
                               },
+                            ),
+                            trailing: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            UserProfile()));
+                              },
+                              child: Icon(Icons.edit),
                             ),
                           )
                         ],

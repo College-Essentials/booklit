@@ -22,6 +22,7 @@ dependencies:
   firebase_auth: any
   firebase_core: any
   firebase_database: any
+  cloud_firestore: ^0.13.0+1
   google_sign_in: any
   fluttertoast: any
   flutter_signin_button: any

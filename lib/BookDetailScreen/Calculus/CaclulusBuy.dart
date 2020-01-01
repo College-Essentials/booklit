@@ -124,7 +124,7 @@ class _CalculusBuyState extends State<CalculusBuy> {
                               Text(
                                 'Relevent Courses: Math 2110, Math 2120',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 18),
+                                    fontWeight: FontWeight.bold, fontSize: 15),
                               ),
                             ],
                           ),

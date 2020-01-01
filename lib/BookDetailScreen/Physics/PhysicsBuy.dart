@@ -173,7 +173,7 @@ class _PhysicsBuyState extends State<PhysicsBuy> {
 
   _openPDF() async {
     const url =
-        'https://openstax.org/details/books/university-physics-volume-1';
+        'https://openstax.org/books/university-physics-volume-1/pages/1-introduction';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
