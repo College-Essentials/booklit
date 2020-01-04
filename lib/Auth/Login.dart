@@ -15,6 +15,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _email, _password;
+  String _forgotPasswordEmail;
 
   @override
   Widget build(BuildContext context) {
@@ -163,6 +164,12 @@ class _LoginState extends State<Login> {
                 ),
               ],
             ))),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(
+            Icons.help,
+            size: 30,
+          ),
+        ),
       ),
     );
   }
