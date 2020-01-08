@@ -212,6 +212,7 @@ class _SignUpState extends State<SignUp> {
         await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: _email, password: _password);
         final FirebaseUser user = await FirebaseAuth.instance.currentUser();
+        user.sendEmailVerification();
         final uid = user.uid;
         Firestore.instance.collection("users").document(uid).setData({
           "Name": userName.text,

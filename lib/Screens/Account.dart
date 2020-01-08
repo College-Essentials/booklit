@@ -1,9 +1,10 @@
 import 'package:booklit/Auth/Login.dart';
-import 'package:booklit/Auth/sign_in.dart';
 import 'package:booklit/Screens/AccountRelated/UserProfile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'AccountRelated/About.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Account extends StatefulWidget {
@@ -53,15 +54,15 @@ class _AccountState extends State<Account> {
                       builder: (context, AsyncSnapshot<FirebaseUser> snapshot) {
                         if (snapshot.hasData) {
                           String email = snapshot.data.email;
-                          String userName = email.substring(
+                          String name = email.substring(
                               0, email.indexOf("@calstatela.edu"));
                           return Text(
-                            'User Name: ' + userName,
-                            style: TextStyle(color: Colors.black, fontSize: 15),
+                            'Name: ' + name,
+                            style: GoogleFonts.roboto(
+                                textStyle: TextStyle(fontSize: 20)),
                           );
-                        } else {
-                          return Text('Loading...');
                         }
+                        return CircularProgressIndicator();
                       },
                     ),
                     subtitle: FutureBuilder(
@@ -70,23 +71,17 @@ class _AccountState extends State<Account> {
                         if (snapshot.hasData) {
                           String email = snapshot.data.email;
                           return Text(
-                            'Email: ' + email,
-                            style: TextStyle(color: Colors.black, fontSize: 15),
+                            'Email: ' +
+                                email +
+                                '\nVerified: ' +
+                                snapshot.data.isEmailVerified.toString(),
+                            style: GoogleFonts.roboto(
+                                textStyle: TextStyle(
+                                    fontSize: 20, color: Colors.black)),
                           );
-                        } else {
-                          return Text('Loading...');
                         }
+                        return CircularProgressIndicator();
                       },
-                    ),
-                    trailing: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    UserProfile()));
-                      },
-                      child: Icon(Icons.edit),
                     ),
                   ),
                   GestureDetector(
@@ -130,7 +125,12 @@ class _AccountState extends State<Account> {
                     thickness: .5,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => About()),
+                      );
+                    },
                     child: ListTile(
                       leading: Icon(
                         Icons.info,
